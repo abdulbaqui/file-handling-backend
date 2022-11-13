@@ -1,0 +1,52 @@
+serializers
+ 
+ #file_upload = serializers.FileField()
+    file_upload =serializers.ListField(
+                       child=serializers.FileField( max_length=100000,
+                                         allow_empty_file=False,
+                                         use_url=False ))
+    class Meta:
+        fields = ['file_upload']
+
+
+
+## OLD VIEW
+
+ serializer_class = UploadfileSerializer
+    
+    def list(self,request):
+        return Response("GET API")
+    
+    def create(self,request):
+        file_uploaded = request.FILES.get('file_upload')
+        file_name = file_uploaded.name
+        content_type = file_uploaded.content_type
+        destination = 'media/'
+        output = f'{destination}{file_name}'
+        print(file_name)
+        fn = open(output,'wb+')
+        for chunk in file_uploaded.chunks():
+            fn.write(chunk)
+        fn.close()
+        
+        response = 'POST API and you have uploaded a {} file'.format(content_type)
+        return Response(response)
+
+
+
+ def create(self, request):
+        serializer_class = FileSerializer(data=request.data)
+        if 'file' not in request.FILES or not serializer_class.is_valid():
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        else:
+            
+            files = request.FILES.getlist('file')
+            for f in files:
+                handle_uploaded_file(f)
+
+            return Response(status=status.HTTP_201_CREATED)
+
+def handle_uploaded_file(f):
+    with open(f.name, 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
