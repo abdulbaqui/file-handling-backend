@@ -23,7 +23,7 @@ Creating virtual environment is necessary to avoid any unwanted issue that arise
 ```bash
   python -m venv venv
 ```
-Here second venv is directory name where your environment would be created. You can name it what ever you want. Now you need to activate the virtual environment. Activating virtual envirnemnet varies the type of operating system  you are using.
+Here second venv is directory name where your environment would be created. You can name it what ever you want. Now you need to activate the virtual environment. Activating virtual environmnet varies the type of operating system  you are using.
 
 Windows 
 ```bash
