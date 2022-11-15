@@ -18,12 +18,12 @@ Clone the project
 To run this project navigate to the directory "file-handling-backend" then follow the instructions below.
 
 ### Building a virtual environment:
-Creating virtual envirnment is necessary to avoid any unwanted issue that arise. More than that to avoid poluting local Python envirnment.
+Creating virtual environment is necessary to avoid any unwanted issue that arise. More than that to avoid poluting local Python environment.
 
 ```bash
-  Python -m venv venv
+  python -m venv venv
 ```
-Here second venv is directory name where your environment would be created. You can name it what ever you want. Now you need to activate the virtual envirnment. Activating virtual envirnemnet varies the type of operating system  you are using.
+Here second venv is directory name where your environment would be created. You can name it what ever you want. Now you need to activate the virtual environment. Activating virtual envirnemnet varies the type of operating system  you are using.
 
 Windows 
 ```bash
@@ -38,7 +38,7 @@ Your Output would be some what like this.
 ```bash
   (venv) ..\file-handling-backend\venv\Scripts>
 ```
-Now as you have sucessfully activated your virtual environment lets move toward installing dependencies. Now run the following bash command in your activated envirnment this will install your project dependencies.
+Now as you have sucessfully activated your virtual environment lets move toward installing dependencies. Now run the following bash command in your activated environment this will install your project dependencies.
 
 Navigate to file-handling-backend directory
 ```bash
@@ -71,7 +71,7 @@ The task and endpoints are as follows:
 
 ### file upload
 
-```POST::http <domain>:<port>/upload/ ```
+```POST:http <domain>:<port>/upload/ ```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
